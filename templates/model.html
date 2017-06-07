@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-3">
+        <h1>Model</h1>
+        <div class="list-group">
+            <a href="#/addModel" class="btn btn-info">Add Model</a>
+        </div>
+    </div>
+</div>
+<div class="container" ng-controller="carsCtrl">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Model Id</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="success" ng-repeat="model in models">
+            <td><span ng-bind="model.id"></span></td>
+            <td><span ng-bind="model.name"></span></td>
+            <td><span ng-bind="model.brand.name"></span></td>
+            <td>
+                <button ng-click="removeModel(model.id)" href="#/model" class="btn btn-danger btn-sm">Delete</button>
+                <a href="#/model/edit/{{model.id}}" class="btn btn-info">Edit</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

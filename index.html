@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cars Homepage</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-app="carsApp">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/car">Cars</a>
+            <a class="navbar-brand" href="#/brand">Brand</a>
+            <a class="navbar-brand" href="#/model">Model</a>
+            <a class="navbar-brand" href="#/color">Color</a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div ng-view>
+    </div>
+</div>
+<div class="container">
+    <hr>
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; BTech sp. z o.o. 2017</p>
+            </div>
+        </div>
+    </footer>
+</div>
+<!--modal-->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="Delete">Delete</h4>
+            </div>
+            <div class="modal-body">
+                <p id="modalInfo"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="btnDelete">Delete</button>
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" id="btnCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal end-->
+<!--second model-->
+<div class="modal fade" id="confModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="modalTitle"></h4>
+            </div>
+            <div class="modal-body">
+                <p id="modalConfirm"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal" id="btnOK">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--second model end-->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/main.js"></script>
+<script src="js/router.js"></script>
+</body>
+</html>

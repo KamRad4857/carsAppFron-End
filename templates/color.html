@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-3">
+        <h1>Color</h1>
+        <div class="list-group">
+            <a href="#/addColor" class="btn btn-info">Add Color</a>
+        </div>
+    </div>
+</div>
+<div class="container" ng-controller="carsCtrl">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Color Id</th>
+            <th>Color name</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="success" ng-repeat="color in colors">
+            <td><span ng-bind="color.id"></span></td>
+            <td><span ng-bind="color.name"></span></td>
+            <td>
+                <button ng-click="removeColor(color.id)" class="btn btn-danger btn-sm">Delete</button>
+                <a href="#/color/edit/{{color.id}}" class="btn btn-info">Edit</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

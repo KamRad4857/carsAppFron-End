@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-3">
+        <h1>Edit Car</h1>
+        <div class="list-group">
+            <a href="#/addCar" class="btn btn-info">Add Car</a>
+        </div>
+    </div>
+</div>
+<div class="container" id="add-car-div" ng-controller="carsCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form class="form" name="carForm" ng-submit="editCar()">
+                <div class="form-group">
+                    <label for="colId">Car Id</label>
+                    <input placeholder="Car Id" ng-model="editedCar.id" type="text" disabled="disabled"
+                           class="form-control" id="colId">
+                </div>
+                <div class="form-group">
+                    <label for="colName">Car Name</label>
+                    <input type="text" ng-model="editedCar.name" id="colName" class="form-control" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="colModel">Model Name</label><br>
+                    <select placeholder="Model" ng-model="editedCar.model.id" class="form-control" required="required"
+                            ng-options="model.id as model.name for model in models" id="colModel">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="colColor">Color Name</label><br>
+                    <select placeholder="Color" ng-model="editedCar.color.id" class="form-control" required="required"
+                            ng-options="color.id as color.name for color in colors" id="colColor">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="colPrice">Car Price</label>
+                    <input type="number" ng-model="editedCar.price" id="colPrice" class="form-control"
+                           required="required" min="0.01" step=".01" maxlength="10" pattern="^\d+(?:\.\d{1,2})?$">
+                </div>
+                <hr/>
+                <input ng-disabled="carForm.$invalid" type="submit" id="submit" value="Edit Car"
+                       class="btn btn-success">
+            </form>
+        </div>
+    </div>
+</div>

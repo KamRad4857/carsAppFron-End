@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-3">
+        <h1>Add Color</h1>
+        <div class="list-group">
+        </div>
+    </div>
+</div>
+<div class="container" ng-controller="carsCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form class="form" name="colorForm" ng-submit="addColor()">
+                <div class="form-group">
+                    <label for="colName">Color Name</label>
+                    <input ng-model="newColorName" type="text" class="form-control"
+                           id="colName" required="required" placeholder="Color name">
+                </div>
+                <hr/>
+                <input ng-disabled="colorForm.$invalid" type="submit" id="submit" value="Add Color"
+                       class="btn btn-success">
+            </form>
+        </div>
+    </div>
+</div>

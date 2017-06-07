@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-3">
+        <h1>Add Car</h1>
+        <div class="list-group">
+        </div>
+    </div>
+</div>
+<div class="container" id="add-car-div" ng-controller="carsCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form class="form" name="carForm" ng-submit="addCar(addedCar)">
+                <div class="form-group">
+                    <label for="colName">Car Name</label>
+                    <input type="text" ng-model="addedCar.name" id="colName" class="form-control" required="required">
+                </div>
+
+                <div class="form-group">
+                    <label for="colModel">Model Name</label><br>
+                    <select placeholder="Model" ng-model="addedCar.model.id" class="form-control" required="required"
+                            ng-options="model.id as model.name for model in models" id="colModel">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="colColor">Color Name</label><br>
+                    <select name="name" ng-model="addedCar.color.id" class="form-control" required="required"
+                            ng-options="color.id as color.name for color in colors" id="colColor">
+                    </select>
+                    <span ng-show="modelForm.name.$error.required">Select Color</span>
+                </div>
+                <div class="form-group">
+                    <label for="colPrice">Car Price</label>
+                    <input name="name" ng-model="addedCar.price" type="number" class="form-control" id="colPrice"
+                           required="required" min="0.01" step=".01" maxlength="10" pattern="^\d+(?:\.\d{1,2})?$">
+                </div>
+                <hr/>
+                <input ng-disabled="carForm.$invalid" type="submit" id="submit" value="Add Car" class="btn btn-success">
+            </form>
+        </div>
+    </div>
+</div>

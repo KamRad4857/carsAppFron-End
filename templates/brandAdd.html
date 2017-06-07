@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-3">
+        <h1>Add Brand</h1>
+        <div class="list-group">
+        </div>
+    </div>
+</div>
+<div class="container" id="add-car-div" ng-controller="carsCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form class="form" name="brandForm" ng-submit="addBrand()">
+                <div class="form-group">
+                    <label for="colName">Brand Name</label>
+                    <input placeholder="Brand name" ng-model="newBrandName" type="text" class="form-control"
+                           id="colName" required="required">
+                </div>
+                <hr/>
+                <input ng-disabled="brandForm.$invalid" type="submit" id="submit" value="Add Brand"
+                       class="btn btn-success">
+            </form>
+        </div>
+    </div>
+</div>

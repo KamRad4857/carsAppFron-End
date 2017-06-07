@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-3">
+        <h1>Edit Model</h1>
+        <div class="list-group">
+            <a href="#/addModel" class="btn btn-info">Add Model</a>
+        </div>
+    </div>
+</div>
+<div class="container" id="add-car-div" ng-controller="carsCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form name="modelForm" class="form" ng-submit="editModel()">
+                <div class="form-group">
+                    <label for="colId">Model Id</label>
+                    <input placeholder="Model Id" ng-model="editedModel.id" type="text" disabled="disabled"
+                           class="form-control" id="colId">
+                </div>
+                <div class="form-group">
+                    <label for="colName">Model Name</label>
+                    <input type="text" ng-model="editedModel.name" id="colName" class="form-control"
+                           required="required">
+                </div>
+                <div class="form-group">
+                    <label for="colBrand">Brand Name</label><br>
+                    <select placeholder="Brand" ng-model="editedModel.brand.id" id="colBrand" required="required"
+                            ng-options="brand.id as brand.name for brand in brands" class="form-control">
+                    </select>
+                </div>
+                <hr/>
+                <input ng-disabled="modelForm.$invalid" type="submit" id="submit" value="Edit Model "
+                       class="btn btn-success">
+            </form>
+        </div>
+    </div>
+</div>
